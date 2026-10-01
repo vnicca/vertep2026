@@ -1,0 +1,107 @@
+:root {
+  --night: #0c1220;
+  --ink: #e8e0d0;
+  --muted: #b7ae9c;
+  --gold: #d4b45a;
+  --paper: #161d2e;
+  --line: #2a3348;
+  --maria: #c9a0c4;
+  --voin: #7eb89a;
+  --chort: #e08a6a;
+  --vatnik: #9aa3b5;
+  --rieltor: #8eb4d4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--ink);
+  font: 18px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+.hero {
+  padding: 2.5rem 1.25rem 1.5rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--gold);
+  margin: 0 0 0.6rem;
+}
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+.lede { color: var(--muted); margin: 0 0 1.25rem; }
+.toc { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; }
+.toc a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+}
+.toc a:hover { border-bottom-color: var(--gold); }
+
+main { max-width: 42rem; margin: 0 auto; padding: 1.25rem; }
+h2 { font-size: 1.25rem; color: var(--gold); margin: 0 0 0.75rem; }
+
+.card, .scene {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem 1.2rem;
+  margin-bottom: 1rem;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--line); }
+th { color: var(--gold); font-weight: 600; }
+
+.dir { font-style: italic; color: var(--muted); font-size: 0.95rem; }
+.cue { margin: 1rem 0; padding-left: 0.85rem; border-left: 3px solid var(--line); }
+.cue p { margin: 0.35rem 0 0; }
+.who {
+  display: inline-block;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold);
+}
+.cue em { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+
+[data-role="maria"] { border-left-color: var(--maria); }
+[data-role="voin"], [data-role="druzhyna"] { border-left-color: var(--voin); }
+[data-role="chort"] { border-left-color: var(--chort); }
+[data-role="vatnik"] { border-left-color: var(--vatnik); }
+[data-role="rieltor"] { border-left-color: var(--rieltor); }
+[data-role="volonterka"], [data-role="dytyna"] { border-left-color: #c4b48a; }
+[data-role="zvizdar"], [data-role="vsi"] { border-left-color: var(--gold); }
+
+ul { padding-left: 1.2rem; }
+.print-hint { color: var(--muted); font-size: 0.95rem; }
+footer {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media print {
+  body { background: #fff; color: #111; font-size: 12pt; }
+  .hero, .card, .scene { background: #fff; border: none; }
+  .toc { display: none; }
+  .cue { border-left: 2px solid #999; break-inside: avoid; }
+  h1, h2, .eyebrow, .who { color: #111; }
+  .lede, .dir, .cue em, footer, .print-hint { color: #444; }
+  a { color: inherit; }
+}
